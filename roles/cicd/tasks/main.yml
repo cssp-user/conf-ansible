@@ -7,7 +7,7 @@
        name: epel
        description: EPEL YUM repo
        baseurl: https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
-     become: yes
+      become: yes
 
     - name: 02 yum update 
       yum: name=* state=latest
