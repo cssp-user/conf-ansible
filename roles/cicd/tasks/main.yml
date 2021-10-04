@@ -2,12 +2,6 @@
     - name: install openjdk
       yum: name=java-1.8.0-openjdk-devel state=present
       
-    - name: 01 add epel
-      yum_repository:
-       name: epel
-       description: EPEL YUM repo
-       baseurl: https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
-      become: yes
 
     
   
