@@ -12,11 +12,11 @@
           url: http://pkg.jenkins-ci.org/redhat-stable/jenkins.repo
           dest: /etc/yum.repos.d/jenkins.repo
 
-  #  - name: import GPG key
-  #    rpm_key: key=https://jenkins-ci.org/redhat/jenkins-ci.org.key state=present
- 
     - name: import GPG key
-      rpm_key: key=https://pkg.jenkins.io/redhat-stable/jenkins.io.key state=present
+      rpm_key: key=https://jenkins-ci.org/redhat/jenkins-ci.org.key state=present
+ 
+    #- name: import GPG key
+    #  rpm_key: key=https://pkg.jenkins.io/redhat-stable/jenkins.io.key state=present
     - name: install Jenkins server
       yum: name=jenkins state=present
 
