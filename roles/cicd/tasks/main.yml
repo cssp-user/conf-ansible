@@ -1,6 +1,16 @@
 ---
     - name: install openjdk
       yum: name=java-1.8.0-openjdk-devel state=present
+      
+    - name: 01 add epel
+      yum_repository:
+       name: epel
+       description: EPEL YUM repo
+       baseurl: https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+     become: yes
+
+    - name: 02 yum update 
+      yum: name=* state=latest
   
     - name: download Jenkins repo
       get_url: 
@@ -8,7 +18,7 @@
           dest: /etc/yum.repos.d/jenkins.repo
  
     - name: import GPG key
-      ansible.builtin.rpm_key: key=https://pkg.jenkins.io/redhat-stable/jenkins.io.key state=present
+      rpm_key: key=https://pkg.jenkins.io/redhat-stable/jenkins.io.key state=present
       
     - name: install Jenkins server
       yum: name=jenkins state=present
