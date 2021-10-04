@@ -1,5 +1,5 @@
 - hosts: localhost
   become: yes
   roles:
-   - {  role: /home/centos/configuration-manager/src/devstack/roles/cicd }
+   - {  role: /home/centos/conf-ansible/roles/cicd }
 
